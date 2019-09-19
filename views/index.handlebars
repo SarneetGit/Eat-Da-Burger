@@ -1,0 +1,40 @@
+<div class="container" style="margin-top: 2.5vh; background-color:transparent;">
+    <div class="row" style="background-color:transparent;">
+        <div class="col-md-4 offset-md-4">
+            <div class="card" style="background-color: #FFCA63;">
+                <div class="card-body text-center">
+                    <!-- Title -->
+                    <h1 class="card-title">Burgers</h1>
+                    <!-- Text -->
+                    <p class="card-text" style="font-size:1em; color: black;">
+                        <i>“Eat clean to stay fit, have a burger to stay sane.”</i>
+                        <span> - Gigi Hadid</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 2.5vh; margin-bottom: 2.5vh;">
+        <div class="col-md-4" id="notDevoured">
+            <div class="card" style="background-color: #FFCA63;">
+                <div class="card-body text-center">
+                    <!-- Title -->
+                    <h1 class="card-title">Ready to Eat!</h1>
+                    <!-- Text -->
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                            {{> burgers/consume devour=false}}
+                        {{/unless}}
+                    {{/each}}                    
+                </div>
+            </div>
+        </div>
+        <div class="offset-md-4 col-md-4" id="devoured">
+            {{#each cats}}
+            {{#if sleepy}}
+            {{> cats/cat-block sleep=false}}
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
