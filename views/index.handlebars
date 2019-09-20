@@ -19,22 +19,51 @@
             <div class="card" style="background-color: #FFCA63;">
                 <div class="card-body text-center">
                     <!-- Title -->
-                    <h1 class="card-title">Ready to Eat!</h1>
+                    <h3 class="card-title">Ready to Eat!</h3>
                     <!-- Text -->
                     {{#each burgers}}
-                        {{#unless devoured}}
-                            {{> burgers/consume devour=false}}
-                        {{/unless}}
-                    {{/each}}                    
+                    {{#unless this.devoured}}
+                    {{> burgers/consume devour=false}}
+                    {{/unless}}
+                    {{/each}}
                 </div>
             </div>
         </div>
-        <div class="offset-md-4 col-md-4" id="devoured">
-            {{#each cats}}
-            {{#if sleepy}}
-            {{> cats/cat-block sleep=false}}
-            {{/if}}
-            {{/each}}
+        <div class="col-md-4">
+            <div class="card" style="background-color: #FFCA63;">
+                <div class="card-body text-center">
+                    <div class="md-form input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">
+                                <i class="fas fa-hamburger"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="" id="bughaName" aria-label="Sizing example input"
+                            aria-describedby="inputGroupMaterial-sizing-default">
+                    </div>
+                        <button type="button" class="btn btn-deep-orange" id="createBugha">
+                            <i class="fas fa-utensils"></i> Create
+                        </button>
+                        <p style="font-size: .8em; margin-top:1.5vh;">Enter a burger and Create.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" id="devoured">
+            <div class="card" style="background-color: #FFCA63;">
+                <div class="card-body text-center">
+                    <!-- Title -->
+                    <h3 class="card-title">Consumption History:</h3>
+                    <!-- Text -->
+                    {{#each burgers}}
+                    {{#if this.devoured}}
+                    <p class="card-text" style="font-size:1em; color: black;">
+                        {{id}}. {{burger_name}}
+                    </p>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
+

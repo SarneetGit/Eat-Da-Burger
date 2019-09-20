@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Everybody eats
-app.use(express.static(path.join(__dirname, '/public/assets')));
+// app.use(express.static(path.join(__dirname, '/public/assets')));
 
 
 // Set Handlebars.
