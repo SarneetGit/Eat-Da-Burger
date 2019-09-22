@@ -4,7 +4,7 @@
             <div class="card" style="background-color: #FFCA63;">
                 <div class="card-body text-center">
                     <!-- Title -->
-                    <h1 class="card-title">Burgers</h1>
+                    <h1 class="card-title">Eat-Da-Burger</h1>
                     <!-- Text -->
                     <p class="card-text" style="font-size:1em; color: black;">
                         <i>“Eat clean to stay fit, have a burger to stay sane.”</i>
@@ -44,7 +44,7 @@
                         <button type="button" class="btn btn-deep-orange" id="createBugha">
                             <i class="fas fa-utensils"></i> Create
                         </button>
-                        <p style="font-size: .8em; margin-top:1.5vh;">Enter a burger and Create.</p>
+                        <p class="text-muted" style="font-size: .8em; margin-top:1.5vh;">Enter a burger and Create.</p>
                 </div>
             </div>
         </div>
@@ -52,12 +52,12 @@
             <div class="card" style="background-color: #FFCA63;">
                 <div class="card-body text-center">
                     <!-- Title -->
-                    <h3 class="card-title">Consumption History:</h3>
+                    <h3 class="card-title">Burger Heaven :</h3>
                     <!-- Text -->
                     {{#each burgers}}
                     {{#if this.devoured}}
-                    <p class="card-text" style="font-size:1em; color: black;">
-                        {{id}}. {{burger_name}}
+                    <p class="card-text text-left" style="font-size:1em; color: black;">
+                        <span class="badge badge-danger">{{id}}</span> {{burger_name}}
                     </p>
                     {{/if}}
                     {{/each}}
